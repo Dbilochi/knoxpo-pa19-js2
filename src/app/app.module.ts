@@ -1,18 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { LoginComponent } from './login/login.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {EmployeeModule} from './employee/employee.module'
+import {AuthGuard} from './_guards/auth.guard'
+import {OperateGuard} from './_guards/operate.guard'
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    EmployeeModule,
   ],
-  providers: [],
+  providers: [AuthGuard,OperateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

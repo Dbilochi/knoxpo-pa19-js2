@@ -1,0 +1,128 @@
+<header class="navbar navbar-expand-md">
+  <a class="navbar-brand" ><img src="assets/images/logo.png"></a>
+  <div class="dropdown settings ml-auto">
+    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+      <img src="assets/images/setting-icon.jpg">
+    </button>
+    <div class="dropdown-menu dropdown-menu-right">
+      <a class="dropdown-item" >Sign Out</a>
+    </div>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</header>
+
+<div class="d-flex flex-wrap h-100">
+  <nav class="leftnav collapse h-100" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link active" href="javascript:void(0)" (click)="add('root')">Dashboard</a></li>
+      <li class="nav-item"><a class="nav-link " href="javascript:void(0)" (click)="add('add')">Add Employee</a></li>
+    </ul>
+  </nav>
+
+  <div class="rightslider">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header d-flex flex-wrap">
+            <!-- Nav pills -->
+            {{title}}
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <form name="form" [formGroup]="employeeForm" (ngSubmit)="submitForm(employeeForm)" >
+                <div class="form-group">
+                  <input type="text" name="firstname" placeholder="First Name" class="form-control" formControlName="first_name" required>
+                  <div *ngIf="employeeForm.controls.first_name.errors?.required && employeeForm.get('first_name').touched">
+                    This Field is Required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" name="lastname" placeholder="Last Name" class="form-control" formControlName="last_name">
+                  <div *ngIf="employeeForm.controls.last_name.errors?.required && employeeForm.get('last_name').touched">
+                    This Field is Required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" placeholder="Email address" class="form-control" formControlName="email">
+                  <div *ngIf="employeeForm.controls.email.errors?.required && employeeForm.get('email').touched">
+                    This Field is Required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="number" name="phone" placeholder="phone number" class="form-control" formControlName="phone_number">
+                  <div *ngIf="employeeForm.controls.phone_number.errors?.required && employeeForm.get('phone_number').touched">
+                    This Field is Required.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="date" name="birthdate" placeholder="Birth date" class="form-control" formControlName="dob">
+                  <div *ngIf="employeeForm.controls.dob.errors?.required && employeeForm.get('dob').touched">
+                    This Field is Required.
+                  </div>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit"  class="btn btn-primary" value="Submit">
+                </div>
+              </form>
+            </div>
+            <div class="card-body" *ngIf="show == true">
+              <div class="table-responsive">
+                <table class="table table-bordered mb-0">
+                  <thead>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Email</th>
+                      <th>Phone Number</th>
+                      <th>Date of Birth</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let employee of employees" >
+                      <td (dblclick)="employee.editing = true">
+                        <input class="edit"
+                        #updatedEmployee
+                        [value]="employee.first_name"
+                        (blur)="updateEmployee(employee, updatedEmployee.value,'first_name')"
+                        (keyup.escape)="employee.editing = false"
+                        (keyup.enter)="updateEmployee(employee, updatedEmployee.value)">
+                      </td>
+                      <td (dblclick)="employee.editing = true">
+                        <input class="edit"
+                        #updatedEmployee1
+                        [value]="employee.last_name"
+                        (blur)="updateEmployee(employee, updatedEmployee1.value,'last_name')"
+                        (keyup.escape)="employee.editing = false"
+                        (keyup.enter)="updateEmployee(employee, updatedEmployee.value)"></td>
+                        <td (dblclick)="employee.editing = true">
+                          <input class="edit"
+                          #updatedEmployee2
+                          [value]="employee.email"
+                          (blur)="updateEmployee(employee, updatedEmployee2.value,'email')"
+                          (keyup.escape)="employee.editing = false"
+                          (keyup.enter)="updateEmployee(employee, updatedEmployee.value)">
+                        </td>
+                        <td>
+                          <input class="edit"
+                          #updatedEmployee3
+                          [value]="employee.phone_number"
+                          (blur)="updateEmployee(employee, updatedEmployee3.value,'phone_number')"
+                          (keyup.escape)="employee.editing = false"
+                          (keyup.enter)="updateEmployee(employee, updatedEmployee.value)">
+                        </td>
+                        <td>{{employee.dob}}</td>
+                        <td><button (click)="destroyEmployee(employee)">Delete</button></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

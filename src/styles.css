@@ -1,1 +1,133 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "assets/css/bootstrap.css";
+
+html, body {height: 100%;}
+
+body {padding: 0px; margin: 0px; font-size: 14px; font-family: 'Roboto', sans-serif; font-weight: 400; background: #f0f0f5;}
+body.login-bg {background: linear-gradient(to top right, rgba(255,82,99,0.9) 10%, rgba(255,115,129,0.9) 65%, rgba(252,189,1,0.9) 125%);}
+
+select::-ms-expand {display: none;}
+
+
+/* button */
+.btn {padding: 15px 50px; font-size: 14px; color: #fff; text-transform: uppercase; font-weight: 400; line-height: 1; border: 0px; border-radius: 50px; transition: all 0.5s;}
+.btn.btn-primary {background: #40E0D0; background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); background-size: 200%;}
+.btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:not(:disabled):not(.disabled):active:focus {box-shadow:0 0 10px rgba(0, 0, 0, 0.3); background-position: right center;}
+
+
+/* dropdown menu */
+.dropdown-menu {margin: 10px 0 0 0;}
+.dropdown-menu .dropdown-item {font-size: 14px;}
+
+
+/* form */
+.form-group {padding: 0px; margin: 0px 0 25px;}
+.form-group label {padding: 0px; margin: 0px 0 10px; font-size: 12px; font-weight: 400; line-height: 1; display: block; color: #848f99;}
+.form-group .form-control {padding: 15px 20px; margin:0; font-size: 14px; font-weight: 400; line-height: 1; display: block; height: auto; border-color: #d7d7de; color: #333333;}
+.form-group .form-control:focus {box-shadow: none; border-color: #999;}
+.form-group select.form-control {background: url(assets/images/select-arrow.png) 98% 50% no-repeat; -webkit-appearance: none; -moz-appearance: none; appearance: none;}
+
+.custom-radio {margin: 0 50px 0 0;}
+.custom-radio label {font-size: 16px; padding: 0 10px; margin: 0px; font-weight: 300;}
+
+/* signup */
+.signup-bg {padding: 0px; margin: 0px;}
+.signup-bg .logo {padding: 0px; margin: 0px 0 30px; display: block;}
+.signup-bg .signup-boxs {padding: 0px; margin: 0px; display: block; border-radius: 5px; background: #fff; padding: 30px 40px;}
+.signup-bg .signup-boxs h3 {font-size: 36px; color: #000; font-weight: 300; margin: 0px 0 30px; display: block;}
+.signup-bg .signup-boxs p {font-size: 12px; color: #000; font-weight: 400; margin: 0px 0 25px; display: block;}
+
+
+/* header */
+
+header.navbar {background: #fff; padding: 0px; border-radius: 0px;}
+header.navbar .navbar-brand {width: 200px; padding: 15px 0 15px 40px; margin: 0px; background: #151b26;}
+header.navbar .navbar-brand img {height: 30px;}
+
+header.navbar .search-box {margin-left: 30px; display: flex; flex-wrap: wrap; flex: 0 0 25%}
+header.navbar .search-box .search-button {width: 25px; height: 40px; background: url(assets/images/search-icon.jpg) 0 50% no-repeat; border: 0px; padding: 0px; margin: 0px;}
+header.navbar .search-box .form-control {width: calc(100% - 25px); border: 0px; border-radius: 0px; padding: 0px; font-size: 16px; font-weight: 300; color: #333;}
+header.navbar .search-box .form-control:focus {box-shadow: none;}
+header.navbar .search-box .form-control::-webkit-input-placeholder {color: #d0d0d0;}
+header.navbar .search-box .form-control::-moz-placeholder {color: #d0d0d0;}
+header.navbar .search-box .form-control::-ms-input-placeholder {color: #d0d0d0;}
+header.navbar .search-box .form-control:-moz-placeholder {color: #d0d0d0;}
+
+header.navbar .settings {margin-right: 30px;}
+header.navbar .settings .dropdown-toggle {padding: 0px; margin: 0px; border: 0px; background: none; display: block; cursor: pointer; outline: 0;}
+header.navbar .settings .dropdown-toggle img {display: block;}
+header.navbar .settings .dropdown-toggle:after {display: none;}
+
+
+/* leftnav */
+.leftnav {width: 200px; background: #151b26;}
+.leftnav.collapse {display: block; padding: 40px 0 0 0;}
+.leftnav ul.navbar-nav {display: block; margin:0; padding: 0px;}
+.leftnav ul.navbar-nav li {display: block; margin:0; padding: 0px;}
+.leftnav ul.navbar-nav li a {display: block; margin:0; padding: 0px 0 0 20px; font-size: 14px; color: #646f79; font-weight: 400; line-height: 40px;}
+.leftnav ul.navbar-nav li a:hover, .leftnav ul.navbar-nav li a.active {color: #fff; font-weight: 700; background: #272d37;}
+.leftnav ul.navbar-nav li ul {display: block; margin:0; padding: 0px;}
+.leftnav ul.navbar-nav li ul li a {padding: 0px 0 0 56px; border: 0px; text-decoration: none;}
+
+
+/* rightslider */
+.rightslider {width: calc(100% - 200px); padding: 30px 30px 0;}
+
+
+
+/* card */
+.card {border-color: #d7d7de;}
+.card .card-header {font-size: 24px; color: #4a4a4a; font-weight: 700; background: none;}
+
+
+
+/* Responsive */
+
+@media(max-width:1200px) {
+  header.navbar .search-box {margin-left: 30px;}
+  header.navbar .settings {margin-right: 30px;}
+
+  .leftnav.collapse {padding: 20px 0 0 0;}
+  .leftnav ul li a {padding: 0px 0 0 26px;}
+  .leftnav ul li ul li a {padding: 0px 0 0 46px;}
+
+  .rightslider {padding: 20px 20px 0;}
+}
+
+
+@media(max-width:1023px) {
+  .card {margin-bottom: 20px;}
+  header.navbar .search-box {flex: 0 0 35%;}
+}
+
+@media(max-width:767px) {
+
+  body {overflow-x: hidden; padding-top: 45px;}
+
+  header.navbar {position: fixed; left: 0px; right: 0px; z-index: 2; top: 0;}
+  header.navbar .navbar-brand {width: auto; padding: 6px 0 6px 15px; border: 0px;}
+  header.navbar .settings {margin-right: 15px;}
+  header.navbar .navbar-toggler {padding: 0px; margin-right: 15px; background: #eb6234; border-radius: 0px;}
+  header.navbar .navbar-toggler .navbar-toggler-icon {background: url(assets/images/menu-icon.png) 50% 50% no-repeat;}
+
+  .leftnav {position: fixed; right: -200px; z-index: 2; transition: all 0.5s;}
+  .leftnav.collapse {display: block;}
+  .leftnav.collapsing {padding: 20px 0 0;}
+  .leftnav.collapse.show {display: block; right: 0;}
+  .rightslider {width: 100%;}
+
+}
+
+
+@media(max-width:480px) {
+
+  body {padding-top: 41px;}
+
+  header.navbar .navbar-brand {padding: 0px 0 0px 10px;}
+  header.navbar .navbar-brand img {height: 25px;}
+  header.navbar .search-box {margin-left: 15px; flex: 0 0 45%;}
+
+  .rightslider {padding: 15px;}
+
+}
