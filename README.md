@@ -14,12 +14,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Developed an Employee system demonstrating CURD functionality.It has two types of users-1) Admin user 2) Normal user.
 Admin user can perform Add,update and delete operations and Normal user can see user list, demonstrating route guards implementation.
 Admin user credentials -
-username- admin
-password - password
+username- (admin)
+password - (password)
 
 Normal user credentials-
-username - abc
-password - password
+username - (abc)
+password - (password)
 
 ## Build
 
