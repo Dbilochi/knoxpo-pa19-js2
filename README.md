@@ -2,13 +2,24 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
+##Working Video(For better explanation)
+
+https://drive.google.com/file/d/1gaPDrW_Mw5liNnaNwK45ErNQLZPetuc4/view
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Brief about project
+Developed an Employee system demonstrating CURD functionality.It has two types of users-1) Admin user 2) Normal user.
+Admin user can perform Add,update and delete operations and Normal user can see user list, demonstrating route guards implementation.
+Admin user credentials -
+username- (admin)
+password - (password)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Normal user credentials-
+username - (abc)
+password - (password)
 
 ## Build
 
