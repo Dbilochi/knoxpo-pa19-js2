@@ -7,8 +7,8 @@ import {EmployeeService} from '../employee.service'
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  private todos;
-  private activeTasks;
+  public todos;
+  public activeTasks;
   constructor(public router: Router,private employeeService: EmployeeService) { }
 
   ngOnInit() {
